@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %}Interview{% endblock title %}
+
+{% block body %}
+
+  <div class="container my-4">
+    <h2 class="text-center"><b><u>Interview</u></b></h2>
+  </div>
+  
+  <style>
+        div.relative {
+          position: relative;
+          left: 350px;
+        }
+        div.alert {
+          position: relative;
+          left: 510px;
+        }
+        
+      </style>
+
+      {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show col-sm-3 text-center" role="alert">
+            <strong>{{ message }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endfor %}
+      {% endif %}
+
+      <div class="relative col-sm-3 mx-5 mb-2">
+
+        <div class="col-sm g-2 form-control align-items-center">
+
+          <form method="POST" action="/login">
+            {% csrf_token %}  
+
+            <div class="row g-3 align-items-center">
+
+              <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Candidate :</label>
+              </div>
+              <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+
+              <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Email ID :</label>
+              </div>
+              <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+
+              <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Start Time :</label>
+              </div>
+              <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+
+              <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">End Time :</label>
+              </div>
+              <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Monday
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Tuesday
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Wednesday
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Thursday
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Friday
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Saturday
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Sunday
+                </label>
+              </div>
+
+            </div>
+
+          </form>
+        
+        </div>
+
+      </div>
+
+{% endblock body %}
